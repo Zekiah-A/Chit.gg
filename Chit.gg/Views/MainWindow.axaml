@@ -1,0 +1,79 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:Chit.gg.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Chit.gg.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="Chit.gg">
+
+    <Design.DataContext>
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <Grid RowDefinitions="48 5 *">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Background="LightGray">
+            <Button HorizontalAlignment="Stretch" Width="45" VerticalAlignment="Stretch" Margin="2" CornerRadius="10"/>
+            <Border Width="2" Background="Gray" Margin="5 10 5 10"/>
+            <Border CornerRadius="10" Background="DarkGray" VerticalAlignment="Stretch" Width="45" Margin="2">
+                <Grid RowDefinitions="* *" ColumnDefinitions="* *" Margin="4">
+                    <Image Grid.Row="0" Grid.Column="0" Source="../Assets/avalonia-logo.ico"/>
+                    <Image Grid.Row="0" Grid.Column="1" Source="../Assets/avalonia-logo.ico"/>
+                    <Image Grid.Row="1" Grid.Column="0" Source="../Assets/avalonia-logo.ico"/>
+                    <Image Grid.Row="1" Grid.Column="1" Source="../Assets/avalonia-logo.ico"/>
+                </Grid>
+            </Border>
+            <Image Source="../Assets/avalonia-logo.ico"/>
+            <Image Source="../Assets/avalonia-logo.ico"/>
+            <Image Source="../Assets/avalonia-logo.ico"/>
+            <Image Source="../Assets/avalonia-logo.ico"/>
+            <Image Source="../Assets/avalonia-logo.ico"/>
+        </StackPanel>
+        
+        <Border Grid.Row="1" ZIndex="1">
+            <Border.Background>
+            <LinearGradientBrush EndPoint="0% 100%" StartPoint="0% 0%">
+                <GradientStop Color="DarkGray" Offset="0" />
+                <GradientStop Color="Transparent" Offset="1" />
+            </LinearGradientBrush>
+            </Border.Background>
+        </Border>
+        
+        <SplitView Grid.Row="1" Grid.RowSpan="2" IsPaneOpen="True" DisplayMode="Inline" OpenPaneLength="175">
+            <SplitView.Pane>
+                <StackPanel>
+                    <TextBox Margin="5" Watermark="search for friends..."></TextBox>
+                    <TextBlock Margin="5 0 5 0" FontStyle="Italic">Direct Messages:</TextBlock>
+                    <Border Background="LightGray" Margin="5 4 5 0" CornerRadius="5">
+                        <Grid ColumnDefinitions="Auto *">
+                            <Image Grid.Column="0" Source="../Assets/avalonia-logo.ico" Width="30"/>
+                            <TextBlock Grid.Column="1" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center">Joe Joeson</TextBlock>
+                        </Grid>
+                    </Border>
+                    <Border Margin="5 4 5 0" CornerRadius="5">
+                        <Grid ColumnDefinitions="Auto *">
+                            <Image Grid.Column="0" Source="../Assets/avalonia-logo.ico" Width="30"/>
+                            <TextBlock Grid.Column="1" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center">Boe Boeson</TextBlock>
+                        </Grid>
+                    </Border>
+                    <Border Margin="5 4 5 0" CornerRadius="5">
+                        <Grid ColumnDefinitions="Auto *">
+                            <Image Grid.Column="0" Source="../Assets/avalonia-logo.ico" Width="30"/>
+                            <TextBlock Grid.Column="1" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center">Loe Lowson</TextBlock>
+                        </Grid>
+                    </Border>
+                    <Border Margin="5 4 5 0" CornerRadius="5">
+                        <Grid ColumnDefinitions="Auto *">
+                            <Image Grid.Column="0" Source="../Assets/avalonia-logo.ico" Width="30"/>
+                            <TextBlock Grid.Column="1" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center">Noe Noeson</TextBlock>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </SplitView.Pane>
+            <Grid>
+                <TextBlock Text="Main Chat View Goes Here" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Grid>
+        </SplitView>
+    </Grid>
+</Window>
